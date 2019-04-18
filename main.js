@@ -8,8 +8,10 @@ var cards = document.querySelectorAll('.memory-card');
 var cardFlipped = false;
 var firstCard;
 var secondCard;
+var points = 0;
+var newGame;
 
-
+  cards.forEach(card => card.addEventListener('click', flipCard));
 //2. Make the flipping work
 
 function flipCard(){
@@ -30,10 +32,14 @@ function flipCard(){
 
     // 2. matching logic
 
-    if (firstCard.dataset.num == secondCard.dataset.num){
+    if (firstCard.dataset.num === secondCard.dataset.num){
       //if match remove event listener
       firstCard.removeEventListener('click', flipCard);
       secondCard.removeEventListener('click', flipCard);
+      points = points + 1;
+      // console.log("you have" + points + " " + "points");
+      displayPoints = document.getElementById("points");
+      displayPoints.innerHTML = ("Points:" + " " + points);
 
     }else {
 
@@ -51,15 +57,38 @@ setTimeout(() => {
 }
 
 
-  cards.forEach(card => card.addEventListener('click', flipCard));
+
+newGame = document.getElementById("new");
+newGame.addEventListener("click", newClick);
+
+function newClick(){
+
+  window.location.reload();
+  points = 0;
 
 
-
+}
 
 // 3. randomization/shuffling of cards
 
-// 4. background music
+(function shuffle(){
+  cards.forEach(card => {
 
-//5. reset
+    var randomPos = Math.floor(math.random * 12);
+    card.style.order = randomPos;
+
+
+  });
+
+
+});
+
+// background music
+
+
+// reset
 
 // points
+
+
+// timer
