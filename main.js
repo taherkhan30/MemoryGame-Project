@@ -11,8 +11,9 @@ var secondCard;
 var points = 0;
 var newGame;
 
+
   cards.forEach(card => card.addEventListener('click', flipCard));
-//2. Make the flipping work
+//Make the flipping work
 
 function flipCard(){
 
@@ -30,22 +31,27 @@ function flipCard(){
     secondCard = this; // (cardFlipped)
 
 
-    // 2. matching logic
+    // matching logic
 
     if (firstCard.dataset.num === secondCard.dataset.num){
       //if match remove event listener
       firstCard.removeEventListener('click', flipCard);
       secondCard.removeEventListener('click', flipCard);
-      points = points + 1;
+      points +=  1;
       // console.log("you have" + points + " " + "points");
       displayPoints = document.getElementById("points");
       displayPoints.innerHTML = ("Points:" + " " + points);
+
+
 
     }else {
 
 setTimeout(() => {
   firstCard.classList.remove('flip');
   secondCard.classList.remove('flip');
+  points = points -  1;
+  displayPoints = document.getElementById("points");
+  displayPoints.innerHTML = ("Points:" + " " + points);
 
 }, 1000);
 
@@ -58,10 +64,12 @@ setTimeout(() => {
 
 
 
-newGame = document.getElementById("new");
-newGame.addEventListener("click", newClick);
+// reset
 
-function newClick(){
+newGame = document.getElementById("new");
+newGame.addEventListener("click", resetGame);
+
+function resetGame(){
 
   window.location.reload();
   points = 0;
@@ -69,26 +77,37 @@ function newClick(){
 
 }
 
-// 3. randomization/shuffling of cards
+// randomization/shuffling of cards
 
 (function shuffle(){
   cards.forEach(card => {
 
-    var randomPos = Math.floor(math.random * 12);
+    var randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
 
 
   });
 
 
-});
+})();
 
-// background music
+//points win
 
+if (points >= 6){
 
-// reset
+  console.log("congrats you win!");
+
+} else {
+
+  console.log("You lose");
+
+}
+
 
 // points
 
 
 // timer
+
+
+// background music
