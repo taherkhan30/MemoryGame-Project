@@ -10,7 +10,10 @@ var firstCard;
 var secondCard;
 var points = 0;
 var newGame;
-
+// var secsInput = 60;
+// var seconds = secsInput;
+// var timer = document.getElementById('timer');
+var endDate = new Date("12:00:00").getTime();
 
   cards.forEach(card => card.addEventListener('click', flipCard));
 //Make the flipping work
@@ -37,7 +40,7 @@ function flipCard(){
       //if match remove event listener
       firstCard.removeEventListener('click', flipCard);
       secondCard.removeEventListener('click', flipCard);
-      points +=  1;
+      points +=  3;
       // console.log("you have" + points + " " + "points");
       displayPoints = document.getElementById("points");
       displayPoints.innerHTML = ("Points:" + " " + points);
@@ -49,7 +52,6 @@ function flipCard(){
 setTimeout(() => {
   firstCard.classList.remove('flip');
   secondCard.classList.remove('flip');
-  points = points -  1;
   displayPoints = document.getElementById("points");
   displayPoints.innerHTML = ("Points:" + " " + points);
 
@@ -73,7 +75,8 @@ function resetGame(){
 
   window.location.reload();
   points = 0;
-
+  shuffle();
+  this.classList.toggle('flip');
 
 }
 
@@ -93,21 +96,36 @@ function resetGame(){
 
 //points win
 
-if (points >= 6){
+if (points < 0){
 
-  console.log("congrats you win!");
-
-} else {
-
-  console.log("You lose");
+  console.log("you lose");
 
 }
 
+if (points > 1){
 
+  console.log("you win");
+
+}
 // points
 
 
 // timer
 
+startTimer();
+
+function startTimer(){
+
+  var timeleft = 60;
+  var y = setInterval(function(){
+  document.getElementById("timer").innerHTML = timeleft + " Seconds Remaining";
+  timeleft -= 1;
+  if(timeleft <= 0){
+    clearInterval(y);
+    document.getElementById("timer").innerHTML = "Timeout"
+  }
+}, 1000);
+
+}
 
 // background music
