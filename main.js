@@ -96,17 +96,7 @@ function resetGame(){
 
 //points win
 
-if (points < 0){
 
-  console.log("you lose");
-
-}
-
-if (points > 1){
-
-  console.log("you win");
-
-}
 // points
 
 
@@ -116,13 +106,14 @@ startTimer();
 
 function startTimer(){
 
-  var timeleft = 60;
+  var timeleft = 10;
   var y = setInterval(function(){
-  document.getElementById("timer").innerHTML = timeleft + " Seconds Remaining";
+  document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
   timeleft -= 1;
   if(timeleft <= 0){
     clearInterval(y);
-    document.getElementById("timer").innerHTML = "Timeout"
+    document.getElementById("timer").innerHTML = "Timeout";
+    console.log("you have scored" +  points);
   }
 }, 1000);
 
