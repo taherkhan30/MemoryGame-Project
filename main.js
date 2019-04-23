@@ -10,10 +10,14 @@ var firstCard;
 var secondCard;
 var points = 0;
 var newGame;
-// var secsInput = 60;
-// var seconds = secsInput;
-// var timer = document.getElementById('timer');
-var endDate = new Date("12:00:00").getTime();
+var opacity = document.getElementById("opacityD");
+var h1Res = document.getElementById("h1Res");
+var pRes = document.getElementById("pRes");
+var result = document.getElementById("result");
+var infobar = document.getElementById("info-bar");
+var gameBoard = document.getElementsByClassName('gameBoard');
+var okayButton = document.getElementById("okayButton");
+
 
   cards.forEach(card => card.addEventListener('click', flipCard));
 //Make the flipping work
@@ -55,6 +59,7 @@ setTimeout(() => {
   displayPoints = document.getElementById("points");
   displayPoints.innerHTML = ("Points:" + " " + points);
 
+
 }, 1000);
 
 
@@ -94,29 +99,51 @@ function resetGame(){
 
 })();
 
-//points win
-
-
-// points
-
-
 // timer
 
 startTimer();
 
 function startTimer(){
 
-  var timeleft = 10;
-  var y = setInterval(function(){
-  document.getElementById("timer").innerHTML = timeleft + " seconds remaining";
+  var timeleft = 62;
+  var completeTime = setInterval(function(){
+  document.getElementById("timer").innerHTML = timeleft + "secs";
   timeleft -= 1;
-  if(timeleft <= 0){
-    clearInterval(y);
+  if (points == 24 && timeleft > 1){
+    document.getElementById("timer").innerHTML = "All Cards Completed";
+    // console.log("you have scored max points" +  points);
+	   result.style.display = "block";
+     h1Res.innerHTML = "Well Done!";
+     pRes.innerHTML = "You've scored " + points + " points.";
+    clearInterval(completeTime);
+
+
+  } else if(timeleft <= 0){
+    clearInterval(completeTime);
     document.getElementById("timer").innerHTML = "Timeout";
-    console.log("you have scored" +  points);
+    // console.log("you have scored " +  points + "try harder");
+    result.style.display = "block";
+    h1Res.innerHTML = "Try again!";
+    pRes.innerHTML = "you scored " + points + " points in 60 seconds";
+
+
+
   }
+
 }, 1000);
 
 }
+
+
+okayButton.addEventListener("click",okayClick);
+
+function okayClick() {
+	result.style.display = "none";
+  resetGame()
+}
+
+
+
+
 
 // background music

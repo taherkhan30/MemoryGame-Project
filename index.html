@@ -19,15 +19,18 @@
 
       <div id="info-bar">
         <div id="timer">
-          <span id ="secs">60 Seconds Remaining</span>
+          <span id ="secs">60 secs</span>
         </div>
         <div id="points">
         Points:0
         </div>
+
+
+
           <button id="new" type="button" name="button">Reset</button>
       </div>
 
-      <section class="gameBoard">
+      <section class="gameBoard" id="gameBoard">
           <div class="memory-card" id="1" data-num = "1">
             <img class="front" src="img/1.jpeg" alt="1">
             <img class="back" src="img/0.jpeg" alt="text">
@@ -36,11 +39,11 @@
             <img class="front" src="img/2.jpeg" alt="2">
             <img class="back" src="img/0.jpeg" alt="text">
           </div>
-          <div class="memory-card" id="1" data-num = "3">
+          <div class="memory-card" id="2" data-num = "3">
             <img class="front" src="img/3.jpg" alt="3">
             <img class="back" src="img/0.jpeg" alt="text">
           </div>
-          <div class="memory-card" id="1" data-num = "4">
+          <div class="memory-card" id="3" data-num = "4">
             <img class="front" src="img/4.jpg" alt="4">
             <img class="back" src="img/0.jpeg" alt="text">
           </div>
@@ -92,17 +95,17 @@
             <img class="front" src="img/8.jpg" alt="text">
             <img class="back" src="img/0.jpeg" alt="text">
           </div>
-          <div id="opacityD"></div>
-      		<div id="result">
-      			<div id="popBody">
-      				<div id="imgDiv"><img src="img/great.jpg"></div>
-      				<h1 id="h1Res">Congratulations!</h1>
-      				<p id="pRes">You've scored 5/10 in 60 seconds</p>
-      			</div>
-      			<div id="popOkay">
-      				<div id="okayButton"><button>Great!</button></div>
-      			</div>
-      		</div>
+          <div id="result">
+            <div id="popBody">
+              <div id="imgDiv"><img src="img/great.jpg"></div>
+              <h1 id="h1Res">Congratulations!</h1>
+              <p id="pRes">You've scored 5/10 in 60 seconds</p>
+            </div>
+            <div id="popOkay">
+              <div id="okayButton"><button>Great!</button></div>
+            </div>
+          </div>
+
 
     </section>
     <script src="main.js"></script>
