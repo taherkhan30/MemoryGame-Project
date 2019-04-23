@@ -86,7 +86,7 @@ function resetGame(){
 
 }
 
-// randomization/shuffling of cards
+//randomiztion
 
 (function shuffle(){
   cards.forEach(card => {
