@@ -10,7 +10,6 @@ var firstCard;
 var secondCard;
 var points = 0;
 var newGame;
-var opacity = document.getElementById("opacityD");
 var h1Res = document.getElementById("h1Res");
 var pRes = document.getElementById("pRes");
 var result = document.getElementById("result");
@@ -106,9 +105,9 @@ startTimer();
 
 function startTimer(){
 
-  var timeleft = 61;
+  var timeleft = 60;
   var completeTime = setInterval(function(){
-  document.getElementById("timer").innerHTML = timeleft + "secs";
+  document.getElementById("timer").innerHTML = timeleft + " " + "secs";
   timeleft -= 1;
   if (points == 24 && timeleft > 1){
     document.getElementById("timer").innerHTML = "All Cards Completed";
