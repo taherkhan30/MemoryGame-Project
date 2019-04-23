@@ -100,7 +100,7 @@ function resetGame(){
 
 })();
 
-// timer
+// timer & display modal
 
 startTimer();
 
@@ -142,9 +142,3 @@ function okayClick() {
 	result.style.display = "none";
   resetGame()
 }
-
-
-
-
-
-// background music
