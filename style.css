@@ -172,7 +172,9 @@ transform: rotateY(180deg);
 	margin: 0px 12px 12px 12px;
 	font-family: cursive;
 	text-align: center;
-	color: #4d0000;
+	color: red;
+  font-size: 60px;
+margin-left: 85px;
 }
 
 #pRes {

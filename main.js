@@ -19,6 +19,7 @@ var gameBoard = document.getElementsByClassName('gameBoard');
 var okayButton = document.getElementById("okayButton");
 
 
+
   cards.forEach(card => card.addEventListener('click', flipCard));
 //Make the flipping work
 
@@ -105,7 +106,7 @@ startTimer();
 
 function startTimer(){
 
-  var timeleft = 62;
+  var timeleft = 61;
   var completeTime = setInterval(function(){
   document.getElementById("timer").innerHTML = timeleft + "secs";
   timeleft -= 1;
