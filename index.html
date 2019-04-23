@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html land="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Disney Memory Game</title>
+      <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+      <header id="head">
+        <h1>Disney Characters Memory Game</h1>
+      </header>
+
+      <div id="info-bar">
+        <div id="timer">
+          <span id ="secs">60 secs</span>
+        </div>
+        <div id="points">
+        Points:0
+        </div>
+
+
+
+          <button id="new" type="button" name="button">Reset</button>
+      </div>
+
+      <section class="gameBoard" id="gameBoard">
+          <div class="memory-card" id="1" data-num = "1">
+            <img class="front" src="img/1.jpeg" alt="1">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "2">
+            <img class="front" src="img/2.jpeg" alt="2">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="2" data-num = "3">
+            <img class="front" src="img/3.jpg" alt="3">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="3" data-num = "4">
+            <img class="front" src="img/4.jpg" alt="4">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "5">
+            <img class="front" src="img/5.jpeg" alt="5">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "6">
+            <img class="front" src="img/6.jpg" alt="6">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "7">
+            <img class="front" src="img/7.jpg" alt="7">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "8">
+            <img class="front" src="img/8.jpg" alt="8">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "1">
+            <img class="front" src="img/1.jpeg" alt="text">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "2">
+            <img class="front" src="img/2.jpeg" alt="text">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "3">
+            <img class="front" src="img/3.jpg" alt="text">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "4">
+            <img class="front" src="img/4.jpg" alt="text">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "5">
+            <img class="front" src="img/5.jpeg" alt="text">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "6">
+            <img class="front" src="img/6.jpg" alt="text">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "7">
+            <img class="front" src="img/7.jpg" alt="text">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div class="memory-card" id="1" data-num = "8">
+            <img class="front" src="img/8.jpg" alt="text">
+            <img class="back" src="img/0.jpeg" alt="text">
+          </div>
+          <div id="result">
+            <div id="popBody">
+              <div id="imgDiv"><img src="img/great.jpg"></div>
+              <h1 id="h1Res">Congratulations!</h1>
+              <p id="pRes">You've scored 5/10 in 60 seconds</p>
+            </div>
+            <div id="popOkay">
+              <div id="okayButton"><button>Okay!</button></div>
+            </div>
+          </div>
+
+
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
