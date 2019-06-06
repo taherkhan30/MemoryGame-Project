@@ -18,7 +18,7 @@ Your mission, should you choose to accept it! Is to build a **browser based game
 
 ## Technical details - the key characteristics of the game included 
 
-- The card shuffle 
+- The card shuffle and randomization 
 - Point Scoring system 
 - Card flips 
 
